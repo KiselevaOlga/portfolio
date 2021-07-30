@@ -1,5 +1,49 @@
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
 body {
-  color: green;
+  color: #BB19D9;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  font-size: 30px;
+  display: block;
+  width: 100%;
+  background: #808080;
+  color: #BB19D9;
+  height: 50px;
+}
+header a {
+  font-size: 25px;
+}
+
+article {
+  width: 80%;
+  border: 1px solid black;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+article img {
+  width: 250px;
+}
+
+#Skills {
+  display: flex;
+  flex-direction: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#Skills img {
+  width: 80px;
+  padding: 20px;
 }
 
 /*# sourceMappingURL=styleOut.css.map */

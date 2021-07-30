@@ -1,5 +1,60 @@
-$myColor: green;
+$violet: #BB19D9;
+$green:  #9DDD0A;
+$yellow: #F4EF00;
+$greyLt: #E6E6E6;
+$greyDk: #808080;
+
+
+
+@mixin icon {
+    width: 80px;
+    padding: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+}
 
 body {
-    color: $myColor;
+    color: $violet;
+    margin: 0;
+}
+
+a{
+    text-decoration: none
+}
+
+header {
+    font-size: 30px;
+    display: block;
+    width: 100%;
+    background: $greyDk;
+    color: $violet;
+    height: 50px;
+    a{
+        font-size: 25px;
+    }
+}
+
+article{
+    width: 80%;
+    border: 1px solid black;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-end;
+    img {
+        width: 250px;
+    }
+}
+
+#Skills {
+    display: flex;
+    flex-direction: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    img {
+        @include icon;
+    }
 }
