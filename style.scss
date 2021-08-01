@@ -11,6 +11,27 @@ $greyDk: #808080;
     padding: 20px;
 }
 
+@mixin center {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+@mixin box {
+    width: 80%;
+    border: 1px solid black;
+    display: inline-flex;
+    flex-direction: row;
+    text-align: center;
+    p {
+        margin-top: 10%;
+    }
+
+    img {
+        width: 250px;
+    }
+}
+
 * {
     box-sizing: border-box;
     font-size: 16px;
@@ -37,15 +58,12 @@ header {
     }
 }
 
+#About{
+    @include center;
+}
+
 article{
-    width: 80%;
-    border: 1px solid black;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: flex-end;
-    img {
-        width: 250px;
-    }
+    @include box;
 }
 
 #Skills {
@@ -54,6 +72,28 @@ article{
     flex-wrap: wrap;
     justify-content: space-evenly;
 
+    img {
+        @include icon;
+    }
+}
+
+#Projects {
+    @include center;
+    
+    div{
+        @include box;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+}
+
+#Contacts {
+    display: flex;
+    flex-direction: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 10%;
+    background: $violet;
     img {
         @include icon;
     }

@@ -24,12 +24,21 @@ header a {
   font-size: 25px;
 }
 
+#About {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
 article {
   width: 80%;
   border: 1px solid black;
   display: inline-flex;
   flex-direction: row;
-  align-items: flex-end;
+  text-align: center;
+}
+article p {
+  margin-top: 10%;
 }
 article img {
   width: 250px;
@@ -42,6 +51,40 @@ article img {
   justify-content: space-evenly;
 }
 #Skills img {
+  width: 80px;
+  padding: 20px;
+}
+
+#Projects {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+#Projects div {
+  width: 80%;
+  border: 1px solid black;
+  display: inline-flex;
+  flex-direction: row;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#Projects div p {
+  margin-top: 10%;
+}
+#Projects div img {
+  width: 250px;
+}
+
+#Contacts {
+  display: flex;
+  flex-direction: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 10%;
+  background: #BB19D9;
+}
+#Contacts img {
   width: 80px;
   padding: 20px;
 }
