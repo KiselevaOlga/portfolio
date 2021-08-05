@@ -4,11 +4,16 @@ $yellow: #F4EF00;
 $greyLt: #E6E6E6;
 $greyDk: #808080;
 
+// clip-path: polygon(0 0, 100% 0, 45% 100%, 18% 100%, 0 100%);
+//     // position: absolute;
+//     z-index: -1; for crooked edge background
 
-
+    // background-image: url(img/code.jpg);
+    // background-color: violet;
+    // background-blend-mode: darken, luminosity; // blends image and color
 @mixin icon {
-    width: 80px;
-    padding: 20px;
+    width: 150px;
+    padding: 30px;
 }
 
 @mixin center {
@@ -19,7 +24,6 @@ $greyDk: #808080;
 
 @mixin box {
     width: 80%;
-    border: 1px solid black;
     display: inline-flex;
     flex-direction: row;
     text-align: center;
@@ -38,52 +42,139 @@ $greyDk: #808080;
 }
 
 body {
-    color: $violet;
     margin: 0;
+}
+
+hr{
+    height: 10px;
+    background: $green;
+    border-color: $green;
 }
 
 a{
     text-decoration: none
 }
-
-header {
+/* -----NAVBAR CONTAINER----- */ 
+.top-header {
     font-size: 30px;
     display: block;
     width: 100%;
-    background: $greyDk;
+    background: $greyLt;
     color: $violet;
     height: 50px;
     a{
         font-size: 25px;
     }
 }
+/* -----NAVBAR CONTAINER----- */ 
 
+/* -----ABOUT CONTAINER----- */ 
 #About{
     @include center;
 }
 
 article{
-    @include box;
+    @include center;
+    width: 80%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: black;
+    background: white;
+    border: 2px solid $greyDk;
+    padding-bottom: 100px; // makes background overflow to another div
+    margin-bottom: -100px;
+    position:relative;
+    z-index: 0;
+    
+    p{
+        padding: 50px;
+    }
+    img{
+        background-color: white;
+        background-blend-mode: screen;
+        clip-path: circle(50% at 50% 50%);
+        height: 200px;
+    }
 }
+/* -----ABOUT CONTAINER----- */ 
 
-#Skills {
+/* -----SKILLS CONTAINER----- */ 
+#Skills{
+    background: #bc19d99a;
+    z-index: -1;
+    padding-bottom: 200px; // makes background overflow to another div
+    margin-bottom: -200px;
+}
+.skills-container {
+    @include center;
+    width: 70%;
     display: flex;
     flex-direction: inline-flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    position: relative;
+    z-index: 1;
 
     img {
         @include icon;
+        background: #f4f000;
+        border-radius: 8px 8px 0px 0px ;
+        box-shadow: 0px -3px 15px 3px $greyDk;
+    }
+    figcaption {
+        font-size: 20px;
+        background: #f4f000;
+        padding: 5px;
+        border-radius: 0px 0px 8px 8px ;
+        box-shadow: 0px 3px 15px 3px $greyDk;      
     }
 }
+/* -----SKILLS CONTAINER----- */ 
 
+/* -----PROJECTS CONTAINER----- */
+
+h2{
+    font-size: 30px;
+}
+  
 #Projects {
     @include center;
-    
     div{
         @include box;
-        border: 1px solid black;
-        border-radius: 5px;
+        border-radius: 8px;
+        background: $greyLt;
+        margin: 30px;
+        img {
+            width: 650px;
+            height: 350px;
+            padding: 30px;
+        }
+    }
+}
+/* -----PROJECTS CONTAINER----- */ 
+
+/* -----FOOTER CONTAINER----- */ 
+#circle-name{
+    @include center;
+    background: $green;
+    color: white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: -40px;
+    padding-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    
+    p {
+        font-size: 40px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: 16px;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: rgb(0, 0, 0);
     }
 }
 
@@ -94,7 +185,11 @@ article{
     justify-content: center;
     height: 10%;
     background: $violet;
+    border-top: 10px solid $green;
+    padding-top: 10px;
     img {
-        @include icon;
+        width: 50px;
     }
+    
 }
+/* -----FOOTER CONTAINER----- */ 

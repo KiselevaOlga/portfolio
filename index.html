@@ -7,7 +7,7 @@
         <link href="styleOut.css" rel="stylesheet">
     </head>
     <body>
-        <header>
+        <header class="top-header">
             <navbar class="navbar">
                 <a href="#About">About</a>
                 <a href="#Projects">Projects</a>
@@ -17,6 +17,10 @@
         <main>
             <section id="About">
                 <article>
+                    <h2>Olga Kiseleva, Frontend Developer</h2>
+                    <figure>
+                        <img src="./img/photo.jpg" alt="Photo Olga Kiseleva"/>
+                    </figure>
                     <p>
                         A web developer with a passion for building apps and problem-solving. 
                         Avid learner - successfully finished programming courses for 
@@ -27,71 +31,89 @@
                          to detail and autonomous working. I am looking forward 
                          to growing as a professional and be a part of the team of developers.
                     </p>
-                    <figure>
-                        <img src="./img/photo.jpg" alt="Photo Olga Kiseleva"/>
-                    </figure>
                 </article>
             </section>
+            <hr>
             <section id="Skills">
-                <figure class="icon-container">
-                    <img src="./img/icons/skills/css.png" alt="CSS logo"/>
-                </figure>
-                <figure class="icon-container">
-                    <img src="./img/icons/skills/git-logo.png" alt="Git logo"/>
-                </figure>
-                <figure class="icon-container">
-                    <img src="./img/icons/skills/html.png" alt="HTML logo"/>
-                </figure>
-                <figure class="icon-container">
-                    <img src="./img/icons/skills/js.png" alt="Javascript logo"/>
-                </figure>
-                <figure class="icon-container">
-                    <img src="./img/icons/skills/python.png" alt="Python logo"/>
-                </figure>
-                <figure class="icon-container">
-                    <img src="./img/icons/skills/react.png" alt="ReactJS logo"/>
-                </figure>
-                <figure class="icon-container">
-                    <img src="./img/icons/skills/sql.png" alt="SQL logo"/>
-                </figure>
-                <figure class="icon-container">
-                    <img src="./img/icons/skills/test.png" alt="Testing"/>
-                </figure>
-                <figure class="icon-container">
-                    <img src="./img/icons/skills/problem-solving.png" alt="Problem solving"/>
-                </figure>
+                <div class="skills-container">
+                    <figure class="icon-container">
+                        <img src="./img/icons/skills/js.png" alt="Javascript logo"/>
+                        <figcaption>JavaScript</figcaption>
+                    </figure>
+                    <figure class="icon-container">
+                        <img src="./img/icons/skills/react.png" alt="ReactJS logo"/>
+                        <figcaption>React</figcaption>
+                    </figure>
+                    <figure class="icon-container">
+                        <img src="./img/icons/skills/html.png" alt="HTML logo"/>
+                        <figcaption>HTML</figcaption>
+                    </figure>
+                    <figure class="icon-container">
+                        <img src="./img/icons/skills/css.png" alt="CSS logo"/>
+                        <figcaption>CSS</figcaption>
+                    </figure>
+                    <figure class="icon-container">
+                        <img src="./img/icons/skills/python.png" alt="Python logo"/>
+                        <figcaption>Python</figcaption>
+                    </figure>
+                    <figure class="icon-container">
+                        <img src="./img/icons/skills/django2.png" alt="Problem solving"/>
+                        <figcaption>Django</figcaption>
+                    </figure>
+                    <figure class="icon-container">
+                        <img src="./img/icons/skills/sql.png" alt="SQL logo"/>
+                        <figcaption>SQL</figcaption>
+                    </figure>
+                    <figure class="icon-container">
+                        <img src="./img/icons/skills/git-logo.png" alt="Git logo"/>
+                        <figcaption>Git</figcaption>
+                    </figure>
+                    <figure class="icon-container">
+                        <img src="./img/icons/skills/problem-solving.png" alt="Problem solving"/>
+                        <figcaption>Problem solving</figcaption>
+                    </figure>
+                    <figure class="icon-container">
+                        <img src="./img/icons/skills/test.png" alt="Testing"/>
+                        <figcaption>Testing</figcaption>
+                    </figure>
+                </div>   
             </section>
-            <section id="Projects">
+            <hr>
+            <section id="Projects">     
+                <h2>Projects</h2>
                 <div>
                     <p>VocaPump</p>
-                    <img src="#"/>
+                    <img src="img/screenshots/vocaBig.jpg"/>
                 </div>
                 <div>
+                    <img src="img/screenshots/pmgBig.jpg"/>
                     <p>Play My Jam</p>
-                    <img src="#"/>
                 </div>
                 <div>
                     <p>Socail Blog</p>
-                    <img src="#"/>
+                    <img src="img/screenshots/blogBig1.jpg"/>
                 </div>
                 <div>
+                    <img src="img/screenshots/nyt.jpg"/>
                     <p>New York article search</p>
-                    <img src="#"/>
                 </div>
                 <div>
                     <p>Converting long URL to short using API of app.rebrandly.com</p>
-                    <img src="#"/>
+                    <img src="img/screenshots/shorturl.png" />
                 </div>
                 <div>
+                    <img src="img/screenshots/map.png"/>
                     <p>Map using MapQuest API</p>
-                    <img src="#"/>
                 </div>
                 <div>
                     <p>Words suggestions using Datamuse API</p>
-                    <img src="#"/>
+                    <img src="img/screenshots/datamuse.jpg"/>
                 </div>
             </section>
         </main>
+        <div id="circle-name">
+            <p>OK</p>
+        </div>
         <footer id="Contacts">
             <figure class="network">
                 <img src="./img/icons/original/linkedin.png" alt="LinkedIn logo"/>

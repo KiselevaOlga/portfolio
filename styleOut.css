@@ -4,26 +4,34 @@
 }
 
 body {
-  color: #BB19D9;
   margin: 0;
+}
+
+hr {
+  height: 10px;
+  background: #9DDD0A;
+  border-color: #9DDD0A;
 }
 
 a {
   text-decoration: none;
 }
 
-header {
+/* -----NAVBAR CONTAINER----- */
+.top-header {
   font-size: 30px;
   display: block;
   width: 100%;
-  background: #808080;
+  background: #E6E6E6;
   color: #BB19D9;
   height: 50px;
 }
-header a {
+.top-header a {
   font-size: 25px;
 }
 
+/* -----NAVBAR CONTAINER----- */
+/* -----ABOUT CONTAINER----- */
 #About {
   display: block;
   text-align: center;
@@ -31,28 +39,72 @@ header a {
 }
 
 article {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
   width: 80%;
   border: 1px solid black;
-  display: inline-flex;
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  color: black;
+  background: white;
+  border: 2px solid #808080;
+  padding-bottom: 100px;
+  margin-bottom: -100px;
+  position: relative;
+  z-index: 0;
 }
 article p {
-  margin-top: 10%;
+  padding: 50px;
 }
 article img {
-  width: 250px;
+  background-color: white;
+  background-blend-mode: screen;
+  clip-path: circle(50% at 50% 50%);
+  height: 200px;
 }
 
+/* -----ABOUT CONTAINER----- */
+/* -----SKILLS CONTAINER----- */
 #Skills {
+  background: #bc19d99a;
+  z-index: -1;
+  padding-bottom: 200px;
+  margin-bottom: -200px;
+}
+
+.skills-container {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  width: 70%;
   display: flex;
   flex-direction: inline-flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  position: relative;
+  z-index: 1;
 }
-#Skills img {
-  width: 80px;
-  padding: 20px;
+.skills-container img {
+  width: 150px;
+  padding: 30px;
+  background: #f4f000;
+  border-radius: 8px 8px 0px 0px;
+  box-shadow: 0px -3px 15px 3px #808080;
+}
+.skills-container figcaption {
+  font-size: 20px;
+  background: #f4f000;
+  padding: 5px;
+  border-radius: 0px 0px 8px 8px;
+  box-shadow: 0px 3px 15px 3px #808080;
+}
+
+/* -----SKILLS CONTAINER----- */
+/* -----PROJECTS CONTAINER----- */
+h2 {
+  font-size: 30px;
 }
 
 #Projects {
@@ -62,18 +114,48 @@ article img {
 }
 #Projects div {
   width: 80%;
-  border: 1px solid black;
   display: inline-flex;
   flex-direction: row;
   text-align: center;
-  border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 8px;
+  background: #E6E6E6;
+  margin: 30px;
 }
 #Projects div p {
   margin-top: 10%;
 }
 #Projects div img {
   width: 250px;
+}
+#Projects div img {
+  width: 650px;
+  height: 350px;
+  padding: 30px;
+}
+
+/* -----PROJECTS CONTAINER----- */
+/* -----FOOTER CONTAINER----- */
+#circle-name {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  background: #9DDD0A;
+  color: white;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-bottom: -40px;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+#circle-name p {
+  font-size: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 16px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
 }
 
 #Contacts {
@@ -83,10 +165,13 @@ article img {
   justify-content: center;
   height: 10%;
   background: #BB19D9;
+  border-top: 10px solid #9DDD0A;
+  padding-top: 10px;
 }
 #Contacts img {
-  width: 80px;
-  padding: 20px;
+  width: 50px;
 }
+
+/* -----FOOTER CONTAINER----- */
 
 /*# sourceMappingURL=styleOut.css.map */
