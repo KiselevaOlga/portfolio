@@ -1,5 +1,40 @@
 console.log('Connected');
 
+const posStyle = `
+    .overlay{
+        display: inline;
+        position: absolute;
+        top: -30px;
+        bottom: 0;
+        left: -30px;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: $greyDk;
+    }
+    .overlay button {
+        color: white;
+        background: $green;
+        height: 15%;
+        width: 20%;
+        font-size: 20px;
+        position: relative; 
+        margin: 20px;
+        top: 37%;
+        text-align: center;
+    }
+    .overlay:hover {
+        position: absolute;
+        opacity: 1;
+    }
+`;
+function css(element, style) {
+    for (const property in style)
+        element.style[property] = style[property];
+}
+
 //function which toggles animation in scroll
 const observer = new IntersectionObserver(entries => {
     // Loop over the entries
@@ -11,12 +46,11 @@ const observer = new IntersectionObserver(entries => {
       if (entry.isIntersecting) {
         // Add the animation class
         entry.target.classList.add('animate__backInRight');
-        // entry.target.classList.add('animate__delay-1s');
       }
 
     });
 });
-const anEl = document.querySelectorAll(".animate__animated")
-anEl.forEach(el => {
-    observer.observe(el)
+const addElement = document.querySelectorAll(".animate__animated")
+addElement.forEach(element => {
+    observer.observe(element);
 })
