@@ -5,6 +5,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="styleOut.css" rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
     </head>
     <body>
         <header class="top-header">
@@ -17,10 +21,12 @@
         <main>
             <section id="About">
                 <article>
-                    <h2>Olga Kiseleva, Frontend Developer</h2>
-                    <figure>
+                    <h2>
+                        Olga Kiseleva, Frontend Developer
+                    </h2>
+                    <!-- <figure>
                         <img src="./img/photo.jpg" alt="Photo Olga Kiseleva"/>
-                    </figure>
+                    </figure> -->
                     <p>
                         A web developer with a passion for building apps and problem-solving. 
                         Avid learner - successfully finished programming courses for 
@@ -81,31 +87,35 @@
             <hr>
             <section id="Projects">     
                 <h2>Projects</h2>
-                <div>
+                <div class="animate__animated">
                     <p>VocaPump</p>
                     <img src="img/screenshots/vocaBig.jpg"/>
+                    <div class="overlay">
+                        <button class="over_btn">See code ></button>
+                        <button class="over_btn">See website ></button>
+                    </div>
                 </div>
-                <div>
+                <div class="animate__animated">
                     <img src="img/screenshots/pmgBig.jpg"/>
                     <p>Play My Jam</p>
                 </div>
-                <div>
+                <div class="animate__animated">
                     <p>Socail Blog</p>
                     <img src="img/screenshots/blogBig1.jpg"/>
                 </div>
-                <div>
+                <div class="animate__animated">
                     <img src="img/screenshots/nyt.jpg"/>
                     <p>New York article search</p>
                 </div>
-                <div>
+                <div class="animate__animated">
                     <p>Converting long URL to short using API of app.rebrandly.com</p>
                     <img src="img/screenshots/shorturl.png" />
                 </div>
-                <div>
+                <div  class="animate__animated">
                     <img src="img/screenshots/map.png"/>
                     <p>Map using MapQuest API</p>
                 </div>
-                <div>
+                <div  class="animate__animated">
                     <p>Words suggestions using Datamuse API</p>
                     <img src="img/screenshots/datamuse.jpg"/>
                 </div>

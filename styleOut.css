@@ -7,6 +7,10 @@ body {
   margin: 0;
 }
 
+main {
+  padding-top: 50px;
+}
+
 hr {
   height: 10px;
   background: #9DDD0A;
@@ -25,6 +29,8 @@ a {
   background: #E6E6E6;
   color: #BB19D9;
   height: 50px;
+  position: fixed;
+  z-index: 2;
 }
 .top-header a {
   font-size: 25px;
@@ -57,12 +63,6 @@ article {
 }
 article p {
   padding: 50px;
-}
-article img {
-  background-color: white;
-  background-blend-mode: screen;
-  clip-path: circle(50% at 50% 50%);
-  height: 200px;
 }
 
 /* -----ABOUT CONTAINER----- */
@@ -112,6 +112,19 @@ h2 {
   text-align: center;
   margin: 0 auto;
 }
+#Projects .overlay {
+  display: inline;
+  position: absolute;
+  top: -30px;
+  bottom: 0;
+  left: -30px;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #808080;
+}
 #Projects div {
   width: 80%;
   display: inline-flex;
@@ -120,6 +133,7 @@ h2 {
   border-radius: 8px;
   background: #E6E6E6;
   margin: 30px;
+  justify-content: space-between;
 }
 #Projects div p {
   margin-top: 10%;
@@ -127,10 +141,27 @@ h2 {
 #Projects div img {
   width: 250px;
 }
+#Projects div p {
+  padding: 30px;
+}
 #Projects div img {
   width: 650px;
   height: 350px;
   padding: 30px;
+}
+#Projects div button {
+  color: white;
+  background: #9DDD0A;
+  height: 15%;
+  width: 20%;
+  font-size: 20px;
+  position: relative;
+  margin: 20px;
+  top: 37%;
+  text-align: center;
+}
+#Projects div:hover .overlay {
+  opacity: 1;
 }
 
 /* -----PROJECTS CONTAINER----- */

@@ -44,7 +44,9 @@ $greyDk: #808080;
 body {
     margin: 0;
 }
-
+main {
+    padding-top: 50px;
+}
 hr{
     height: 10px;
     background: $green;
@@ -62,6 +64,8 @@ a{
     background: $greyLt;
     color: $violet;
     height: 50px;
+    position: fixed;
+    z-index: 2;
     a{
         font-size: 25px;
     }
@@ -91,12 +95,12 @@ article{
     p{
         padding: 50px;
     }
-    img{
-        background-color: white;
-        background-blend-mode: screen;
-        clip-path: circle(50% at 50% 50%);
-        height: 200px;
-    }
+    // img{
+    //     background-color: white;
+    //     background-blend-mode: screen;
+    //     clip-path: circle(50% at 50% 50%);
+    //     height: 200px;
+    // }
 }
 /* -----ABOUT CONTAINER----- */ 
 
@@ -141,18 +145,55 @@ h2{
   
 #Projects {
     @include center;
+    .overlay{
+        display: inline;
+        position: absolute;
+        top: -30px;
+        bottom: 0;
+        left: -30px;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: $greyDk;
+    }
     div{
         @include box;
         border-radius: 8px;
         background: $greyLt;
         margin: 30px;
+        justify-content: space-between;
+        p{
+            padding: 30px;
+        }
         img {
             width: 650px;
             height: 350px;
             padding: 30px;
         }
+        button {
+            color: white;
+            background: $green;
+            height: 15%;
+            width: 20%;
+            font-size: 20px;
+            position: relative; 
+            margin: 20px;
+            top: 37%;
+            // -webkit-transform: translate(-50%, -50%);
+            // -ms-transform: translate(-50%, -50%);
+            // transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    }
+    div:hover{
+        .overlay{
+            opacity: 1;
+        }
     }
 }
+
 /* -----PROJECTS CONTAINER----- */ 
 
 /* -----FOOTER CONTAINER----- */ 
