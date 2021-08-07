@@ -51,6 +51,10 @@ hr{
     height: 10px;
     background: $green;
     border-color: $green;
+    -ms-transform: skewY(20deg); /* IE 9 */
+    transform: skewY(20deg);
+    position: relative;
+    z-index: 0;
 }
 
 a{
@@ -65,7 +69,7 @@ a{
     color: $violet;
     height: 50px;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     a{
         font-size: 25px;
     }
@@ -87,10 +91,11 @@ article{
     color: black;
     background: white;
     border: 2px solid $greyDk;
+    border-radius: 0px 0px 20px 20px ;
     padding-bottom: 100px; // makes background overflow to another div
     margin-bottom: -100px;
     position:relative;
-    z-index: 0;
+    z-index: 1;
     
     p{
         padding: 50px;
@@ -119,7 +124,7 @@ article{
     flex-wrap: wrap;
     justify-content: space-evenly;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 
     img {
         @include icon;
@@ -127,12 +132,17 @@ article{
         border-radius: 8px 8px 0px 0px ;
         box-shadow: 0px -3px 15px 3px $greyDk;
     }
+    
     figcaption {
         font-size: 20px;
         background: #f4f000;
         padding: 5px;
         border-radius: 0px 0px 8px 8px ;
-        box-shadow: 0px 3px 15px 3px $greyDk;      
+        box-shadow: 0px 3px 15px 3px $greyDk; 
+    }
+    .icon-container:hover {
+        animation: shakeX; /* referring directly to the animation's @keyframe declaration */
+        animation-duration: 1s;         
     }
 }
 /* -----SKILLS CONTAINER----- */ 
@@ -165,6 +175,7 @@ h2{
         background: $greyLt;
         margin: 30px;
         justify-content: space-between;
+        z-index: 2;
         p{
             padding: 30px;
         }
@@ -187,12 +198,71 @@ h2{
     }
     div:hover{
         .overlay{
-            position: absolute;
             visibility: visible;
             opacity: 1;
+            box-shadow: 0px 0px 15px 10px $green;
         }
     }
+   
 }
+
+#Smaller_projects{
+    @include center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    .overlaySm{
+        display: inline;
+        position: absolute;
+        visibility: hidden;
+        top: -30px;
+        bottom: 0;
+        left: -30px;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: $greyDk;
+    }
+    div{
+        width: 30%;
+        border-radius: 8px;
+        background: $greyLt;
+        margin: 30px;
+        justify-content: space-between;
+        z-index: 2;
+        p{
+            padding: 30px;
+        }
+        img {
+            width: 250px;
+            height: 150px;
+            padding: 20px;
+        }
+        button {
+            color: white;
+            background: $green;
+            height: 15%;
+            width: 20%;
+            font-size: 20px;
+            position: relative; 
+            margin: 20px;
+            top: 37%;
+            text-align: center;
+        }
+    }
+    div:hover{
+        .overlaySm{
+            visibility: visible;
+            opacity: 1;
+            box-shadow: 0px 0px 15px 10px $green;
+        }
+    }
+   
+}
+
 
 /* -----PROJECTS CONTAINER----- */ 
 

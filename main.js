@@ -50,7 +50,28 @@ const observer = new IntersectionObserver(entries => {
 
     });
 });
-const addElement = document.querySelectorAll(".animate__animated")
-addElement.forEach(element => {
+const addElementBg = document.querySelectorAll(".project")
+addElementBg.forEach(element => {
     observer.observe(element);
 })
+
+const observerSm = new IntersectionObserver(entries => {
+    // Loop over the entries
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        }
+      // If the element is visible
+      if (entry.isIntersecting) {
+        // Add the animation class
+        entry.target.classList.add('animate__bounceInUp');
+      }
+
+    });
+});
+const addElementSm = document.querySelectorAll(".small_project ");
+
+addElementSm.forEach(element => {
+    observerSm.observe(element);
+})
+

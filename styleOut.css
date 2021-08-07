@@ -15,6 +15,11 @@ hr {
   height: 10px;
   background: #9DDD0A;
   border-color: #9DDD0A;
+  -ms-transform: skewY(20deg);
+  /* IE 9 */
+  transform: skewY(20deg);
+  position: relative;
+  z-index: 0;
 }
 
 a {
@@ -30,7 +35,7 @@ a {
   color: #BB19D9;
   height: 50px;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
 }
 .top-header a {
   font-size: 25px;
@@ -56,10 +61,11 @@ article {
   color: black;
   background: white;
   border: 2px solid #808080;
+  border-radius: 0px 0px 20px 20px;
   padding-bottom: 100px;
   margin-bottom: -100px;
   position: relative;
-  z-index: 0;
+  z-index: 1;
 }
 article p {
   padding: 50px;
@@ -84,7 +90,7 @@ article p {
   flex-wrap: wrap;
   justify-content: space-evenly;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 .skills-container img {
   width: 150px;
@@ -99,6 +105,11 @@ article p {
   padding: 5px;
   border-radius: 0px 0px 8px 8px;
   box-shadow: 0px 3px 15px 3px #808080;
+}
+.skills-container .icon-container:hover {
+  animation: shakeX;
+  /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s;
 }
 
 /* -----SKILLS CONTAINER----- */
@@ -135,6 +146,7 @@ h2 {
   background: #E6E6E6;
   margin: 30px;
   justify-content: space-between;
+  z-index: 2;
 }
 #Projects div p {
   margin-top: 10%;
@@ -162,9 +174,65 @@ h2 {
   text-align: center;
 }
 #Projects div:hover .overlay {
-  position: absolute;
   visibility: visible;
   opacity: 1;
+  box-shadow: 0px 0px 15px 10px #9DDD0A;
+}
+
+#Smaller_projects {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+#Smaller_projects .overlaySm {
+  display: inline;
+  position: absolute;
+  visibility: hidden;
+  top: -30px;
+  bottom: 0;
+  left: -30px;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #808080;
+}
+#Smaller_projects div {
+  width: 30%;
+  border-radius: 8px;
+  background: #E6E6E6;
+  margin: 30px;
+  justify-content: space-between;
+  z-index: 2;
+}
+#Smaller_projects div p {
+  padding: 30px;
+}
+#Smaller_projects div img {
+  width: 250px;
+  height: 150px;
+  padding: 20px;
+}
+#Smaller_projects div button {
+  color: white;
+  background: #9DDD0A;
+  height: 15%;
+  width: 20%;
+  font-size: 20px;
+  position: relative;
+  margin: 20px;
+  top: 37%;
+  text-align: center;
+}
+#Smaller_projects div:hover .overlaySm {
+  visibility: visible;
+  opacity: 1;
+  box-shadow: 0px 0px 15px 10px #9DDD0A;
 }
 
 /* -----PROJECTS CONTAINER----- */
