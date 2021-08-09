@@ -64,12 +64,12 @@ const observerSm = new IntersectionObserver(entries => {
       // If the element is visible
       if (entry.isIntersecting) {
         // Add the animation class
-        entry.target.classList.add('animate__bounceInUp');
+        entry.target.classList.add('animate__pulse');
       }
 
     });
 });
-const addElementSm = document.querySelectorAll(".small_project ");
+const addElementSm = document.querySelectorAll(".small_project");
 
 addElementSm.forEach(element => {
     observerSm.observe(element);

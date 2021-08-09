@@ -3,7 +3,8 @@ $green:  #9DDD0A;
 $yellow: #F4EF00;
 $greyLt: #E6E6E6;
 $greyDk: #808080;
-
+$violetLt: #c942f5a1;
+$violetDk: #670073;
 // clip-path: polygon(0 0, 100% 0, 45% 100%, 18% 100%, 0 100%);
 //     // position: absolute;
 //     z-index: -1; for crooked edge background
@@ -43,6 +44,9 @@ $greyDk: #808080;
 
 body {
     margin: 0;
+    background: rgb(255,250,188);
+    background: linear-gradient(0deg, rgba(255,250,188,1) 0%, rgba(242,162,254,1) 48%, rgba(255,255,255,1) 100%);
+    // font-family: Raleway;
 }
 main {
     padding-top: 50px;
@@ -55,6 +59,16 @@ hr{
     transform: skewY(20deg);
     position: relative;
     z-index: 0;
+}
+
+.oppositeHr{
+    height: 10px;
+    background: $green;
+    border-color: $green;
+    -ms-transform: skewY(-20deg); /* IE 9 */
+    transform: skewY(-20deg);
+    position: relative;
+    z-index: -1;
 }
 
 a{
@@ -84,21 +98,30 @@ a{
 article{
     @include center;
     width: 80%;
-    border: 1px solid black;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     text-align: center;
     color: black;
     background: white;
-    border: 2px solid $greyDk;
-    border-radius: 0px 0px 20px 20px ;
-    padding-bottom: 100px; // makes background overflow to another div
-    margin-bottom: -100px;
+    clip-path: polygon(0 0, 100% 0%, 100% 59%, 50% 99%, 0 59%);
+    box-shadow: 0px 0px 15px 3px $greyDk;
+    // border-radius: -30px 0px 20px 20px ;
+    padding-bottom: 200px; // makes background overflow to another div
+    margin-bottom: -200px;
     position:relative;
     z-index: 1;
-    
+    // h2{
+    //     border-bottom: 2px solid $violetDk;
+    //     border-top: 2px solid $violetDk;
+    //     width: 100%;
+    //     @include center;
+    //     text-transform: uppercase;
+    // }
     p{
         padding: 50px;
+        // width: 60%;
+        @include center;
     }
     // img{
     //     background-color: white;
@@ -141,7 +164,7 @@ article{
         box-shadow: 0px 3px 15px 3px $greyDk; 
     }
     .icon-container:hover {
-        animation: shakeX; /* referring directly to the animation's @keyframe declaration */
+        animation: pulse; /* referring directly to the animation's @keyframe declaration */
         animation-duration: 1s;         
     }
 }
@@ -155,6 +178,15 @@ h2{
   
 #Projects {
     @include center;
+    h2{
+        border-bottom: 2px solid $violetDk;
+        border-top: 2px solid $violetDk;
+        // width: 30%;
+        @include center;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 2;
+    }
     .overlay{
         display: inline;
         position: absolute;
@@ -167,12 +199,12 @@ h2{
         width: 100%;
         opacity: 0;
         transition: .5s ease;
-        background-color: $greyDk;
+        background-color: $violetLt;
     }
     div{
         @include box;
         border-radius: 8px;
-        background: $greyLt;
+        background: white;
         margin: 30px;
         justify-content: space-between;
         z-index: 2;
@@ -186,7 +218,7 @@ h2{
         }
         button {
             color: white;
-            background: $green;
+            background: $violetDk;
             height: 15%;
             width: 20%;
             font-size: 20px;
@@ -194,13 +226,14 @@ h2{
             margin: 20px;
             top: 37%;
             text-align: center;
+            border-radius: 15px;
         }
     }
     div:hover{
         .overlay{
             visibility: visible;
             opacity: 1;
-            box-shadow: 0px 0px 15px 10px $green;
+            box-shadow: 0px 0px 35px 10px $violet;
         }
     }
    
@@ -208,9 +241,11 @@ h2{
 
 #Smaller_projects{
     @include center;
+    width: 80%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: stretch;
     .overlaySm{
         display: inline;
@@ -227,9 +262,9 @@ h2{
         background-color: $greyDk;
     }
     div{
-        width: 30%;
+        width: 25%;
         border-radius: 8px;
-        background: $greyLt;
+        background: white;
         margin: 30px;
         justify-content: space-between;
         z-index: 2;
@@ -257,7 +292,7 @@ h2{
         .overlaySm{
             visibility: visible;
             opacity: 1;
-            box-shadow: 0px 0px 15px 10px $green;
+            box-shadow: 30px -10px $yellow;
         }
     }
    
@@ -284,8 +319,8 @@ h2{
         display: inline-block;
         vertical-align: middle;
         margin-top: 16px;
-        -webkit-text-stroke-width: 2px;
-        -webkit-text-stroke-color: rgb(0, 0, 0);
+        // -webkit-text-stroke-width: 2px;
+        // -webkit-text-stroke-color: rgb(255, 255, 255);
     }
 }
 
@@ -294,8 +329,7 @@ h2{
     flex-direction: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 10%;
-    background: $violet;
+    height: 10%;    
     border-top: 10px solid $green;
     padding-top: 10px;
     img {
