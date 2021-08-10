@@ -1,17 +1,15 @@
 $violet: #BB19D9;
-$green:  #9DDD0A;
-$yellow: #F4EF00;
+$green:  #0092FF;
+$yellow: #FFBC4D;
+
+$pink: #ff97af;
 $greyLt: #E6E6E6;
 $greyDk: #808080;
-$violetLt: #c942f5a1;
-$violetDk: #670073;
-// clip-path: polygon(0 0, 100% 0, 45% 100%, 18% 100%, 0 100%);
-//     // position: absolute;
-//     z-index: -1; for crooked edge background
+// $violetLt: #c842f5ef;
+$violetLt: #630085ef;
 
-    // background-image: url(img/code.jpg);
-    // background-color: violet;
-    // background-blend-mode: darken, luminosity; // blends image and color
+$violetDk: #670073;
+
 @mixin icon {
     width: 150px;
     padding: 30px;
@@ -48,9 +46,7 @@ body {
     background: linear-gradient(0deg, rgba(255,250,188,1) 0%, rgba(242,162,254,1) 48%, rgba(255,255,255,1) 100%);
     // font-family: Raleway;
 }
-main {
-    padding-top: 50px;
-}
+
 hr{
     height: 10px;
     background: $green;
@@ -75,69 +71,130 @@ a{
     text-decoration: none
 }
 /* -----NAVBAR CONTAINER----- */ 
-.top-header {
-    font-size: 30px;
-    display: block;
-    width: 100%;
-    background: $greyLt;
-    color: $violet;
+.top-header{
+    background: black;
     height: 50px;
-    position: fixed;
-    z-index: 3;
-    a{
-        font-size: 25px;
-    }
 }
+#navbar {
+    overflow: hidden;
+    z-index: 3;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    justify-content: space-evenly;
+}
+  
+#navbar a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#navbar a:hover {
+    border-bottom: 3px solid $yellow;
+    color: white;
+}
+
+.sticky {
+    background: $violetDk;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+  
+
 /* -----NAVBAR CONTAINER----- */ 
 
 /* -----ABOUT CONTAINER----- */ 
 #About{
     @include center;
+    #myVideo {
+        position:absolute;
+        right: 0;
+        bottom: 0;
+        min-width: 100%; 
+        min-height: 100%;
+    }
 }
 
 article{
     @include center;
-    width: 80%;
-    height: 80vh;
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     text-align: center;
     color: black;
     background: white;
-    clip-path: polygon(0 0, 100% 0%, 100% 59%, 50% 99%, 0 59%);
     box-shadow: 0px 0px 15px 3px $greyDk;
-    // border-radius: -30px 0px 20px 20px ;
-    padding-bottom: 200px; // makes background overflow to another div
-    margin-bottom: -200px;
+    // padding-bottom: 100px; // makes background overflow to another div
+    // margin-bottom: -100px;
     position:relative;
     z-index: 1;
-    // h2{
-    //     border-bottom: 2px solid $violetDk;
-    //     border-top: 2px solid $violetDk;
-    //     width: 100%;
-    //     @include center;
-    //     text-transform: uppercase;
-    // }
-    p{
-        padding: 50px;
-        // width: 60%;
-        @include center;
+    h2{
+        font-size: 50px;
+        color: black;
+        position:relative;
+        z-index: 1;
+        span{
+            font-size: 50px;
+            color: $yellow;
+        }
     }
-    // img{
-    //     background-color: white;
-    //     background-blend-mode: screen;
-    //     clip-path: circle(50% at 50% 50%);
-    //     height: 200px;
-    // }
+    p{
+        font-size: 30px;
+        color: black;
+        padding: 50px;
+        @include center;    
+        position:relative;
+        z-index: 1;
+    }
+    button {
+        @include center;    
+        position:relative;
+        z-index: 1;
+        width: 20%;
+        height: 8%;
+        border: 3px solid $violetDk;
+        background: transparent;
+        color: black;
+        border-radius: 10px;
+        transition: all 0.5s ease-in;
+        cursor: pointer;
+        img{
+            width: 5%;
+            transition: all 0.5s ease-in;
+        }
+    }
+    
+    button:hover{
+        transform: scale(1.1);
+        background: $violet;
+        color: white;
+        img{
+            transform: rotate(90deg);
+        }
+    }
+
 }
 /* -----ABOUT CONTAINER----- */ 
 
 /* -----SKILLS CONTAINER----- */ 
 #Skills{
-    background: #bc19d99a;
+    // background: #bc19d99a;
+    background: #af38c48f;
     z-index: -1;
     padding-bottom: 200px; // makes background overflow to another div
     margin-bottom: -200px;
+    padding-top: 200px; // makes background overflow to another div
+    margin-top: -200px;
 }
 .skills-container {
     @include center;
@@ -148,17 +205,17 @@ article{
     justify-content: space-evenly;
     position: relative;
     z-index: 2;
-
+    padding-top: 50px;
     img {
         @include icon;
-        background: #f4f000;
+        background: $yellow;
         border-radius: 8px 8px 0px 0px ;
         box-shadow: 0px -3px 15px 3px $greyDk;
     }
     
     figcaption {
         font-size: 20px;
-        background: #f4f000;
+        background: $yellow;
         padding: 5px;
         border-radius: 0px 0px 8px 8px ;
         box-shadow: 0px 3px 15px 3px $greyDk; 
@@ -218,7 +275,10 @@ h2{
         }
         button {
             color: white;
-            background: $violetDk;
+            background: transparent;
+            border-style: none;
+            border: 3px solid white;
+            // box-shadow: 0px 0px 30px 5px $yellow;
             height: 15%;
             width: 20%;
             font-size: 20px;
@@ -227,6 +287,8 @@ h2{
             top: 37%;
             text-align: center;
             border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.5s ease-in;
         }
     }
     div:hover{
@@ -234,7 +296,14 @@ h2{
             visibility: visible;
             opacity: 1;
             box-shadow: 0px 0px 35px 10px $violet;
+            button:hover{
+                transform: scaleX(1.03);
+                background: $yellow;
+                color: black;
+                border-color: transparent;              
+            }
         }
+
     }
    
 }
@@ -259,7 +328,7 @@ h2{
         width: 100%;
         opacity: 0;
         transition: .5s ease;
-        background-color: $greyDk;
+        background-color: $green;
     }
     div{
         width: 25%;
@@ -278,14 +347,19 @@ h2{
         }
         button {
             color: white;
+            padding: 10px;
             background: $green;
             height: 15%;
-            width: 20%;
+            width: auto;
             font-size: 20px;
             position: relative; 
             margin: 20px;
             top: 37%;
-            text-align: center;
+            border-radius: 15px;
+            color: $yellow;
+            border-style: none;
+            border: 3px solid $yellow;
+            cursor: pointer;
         }
     }
     div:hover{

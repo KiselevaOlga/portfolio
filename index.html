@@ -11,32 +11,48 @@
         />
     </head>
     <body>
-        <header class="top-header">
-            <navbar class="navbar">
-                <a href="#About">About</a>
-                <a href="#Projects">Projects</a>
-                <a href="#Contacts">Contacts</a>
-            </navbar>
-        </header>
+       
         <main>
             <section id="About">
+                
                 <article>
-                    <h2 class="animate__animated animate__backInDown ">
-                        Olga Kiseleva, Frontend Developer
+                    <!-- <source src="./img/production ID_5018595.mp4" type="video/mp4"> pink-->
+                    <!-- <source src="./img/Pexels Videos 1722881.mp4" type="video/mp4"> grey-->
+                    <!-- <source src="./img/pexels-mart-production-7565825.mp4" type="video/mp4"> purple -->
+                    <!-- <source src="./img/pexels-weldi-studio-design-8675541.mp4" type="video/mp4"> colorful -->
+                    <video autoplay muted loop id="myVideo">
+                        <source src="./img/production ID_4665102.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                    <h2>
+                        Hello, I am <span>Olga Kiseleva</span> <br>
+                        I am a Frontend Web Developer
                     </h2>
-                    <p class="animate__animated animate__backInDown ">
+                    <p>
                         A web developer with a passion for building apps and problem-solving. 
                         Avid learner - successfully finished programming courses for 
                         transition to another industry to become a web programmer. Enjoy
                          being challenged with projects outside of my comfort zone and 
                          knowledge set to keep myself up-to-date with the new technologies. 
-                         My background as an Assistant Lawyer gave me excellent attention 
-                         to detail and autonomous working. I am looking forward 
-                         to growing as a professional and be a part of the team of developers.
+                         I am looking forward to growing as a professional and be a part of the team of developers.
                     </p>
+                    
+                    <button onclick="window.location.href='#Projects';">
+                        View my work &nbsp;&nbsp;<img src="./img/icons/right-arrow.png"/>
+                    </button>
+                    
                 </article>
             </section>
-            <hr>
+
+            <header class="top-header"> 
+                <navbar class="navbar top-header" id="navbar">
+                    <a href="#About">About</a>
+                    <a href="#Projects">Projects</a>
+                    <a href="#Contacts">Contacts</a>
+                </navbar>
+
+            </header>
+           
             <section id="Skills">
                 <div class="skills-container">
                     <figure class="icon-container">
@@ -73,6 +89,7 @@
                     </figure>
                 </div>   
             </section>
+            
             <hr>
             <section id="Projects">     
                 <h2>Projects</h2>
@@ -86,8 +103,8 @@
                     </p>
                     <img src="img/screenshots/vocaBig.jpg"/>
                     <div class="overlay">
-                        <button class="over_btn">See code ></button>
-                        <button class="over_btn">See website ></button>
+                        <button class="over_btn">See code </button>
+                        <button class="over_btn">See website </button>
                     </div>
                 </div>
                 <div class="project animate__animated">
@@ -99,8 +116,8 @@
                         and create a new playlist.
                     </p>
                     <div class="overlay">
-                        <button class="over_btn">See code ></button>
-                        <button class="over_btn">See website ></button>
+                        <button class="over_btn">See code </button>
+                        <button class="over_btn">See website </button>
                     </div>
                 </div>
                 <hr class="oppositeHr">
@@ -112,8 +129,8 @@
                          Misaka Library,UUID tech tack.
                     </p>
                     <div class="overlay">
-                        <button class="over_btn">See code ></button>
-                        <button class="over_btn">See website ></button>
+                        <button class="over_btn">See code </button>
+                        <button class="over_btn">See website </button>
                     </div>
                 </div>
             </section>
@@ -126,7 +143,7 @@
                          CSS3, New York Times Article Search API tech stack.
                     </p>
                     <div class="overlaySm">
-                        <button class="over_btn">See code ></button>
+                        <button class="over_btn">See code </button>
                     </div>
                 </div>
                 <div class="small_project animate__animated">
@@ -135,7 +152,7 @@
                          JavaScript, HTML5, CSS3.
                     </p>
                     <div class="overlaySm">
-                        <button class="over_btn">See code ></button>
+                        <button class="over_btn">See code </button>
                     </div>
                 </div>
                 <div  class="small_project animate__animated">
@@ -145,7 +162,7 @@
                         created using JavaScript, React, HTML5, CSS3
                     </p>
                     <div class="overlaySm">
-                        <button class="over_btn">See code ></button>
+                        <button class="over_btn">See code </button>
                     </div>
                 </div>
                 
@@ -156,7 +173,7 @@
                         to the busket, change a price depending a currency and filter items through search.
                     </p>
                     <div class="overlaySm">
-                        <button class="over_btn">See code ></button>
+                        <button class="over_btn">See code </button>
                     </div>
                 </div>
             </section>

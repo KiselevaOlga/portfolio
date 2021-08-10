@@ -1,60 +1,31 @@
-console.log('Connected');
-
-const posStyle = `
-    .overlay{
-        display: inline;
-        position: absolute;
-        top: -30px;
-        bottom: 0;
-        left: -30px;
-        right: 0;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        transition: .5s ease;
-        background-color: $greyDk;
-    }
-    .overlay button {
-        color: white;
-        background: $green;
-        height: 15%;
-        width: 20%;
-        font-size: 20px;
-        position: relative; 
-        margin: 20px;
-        top: 37%;
-        text-align: center;
-    }
-    .overlay:hover {
-        position: absolute;
-        opacity: 1;
-    }
-`;
-function css(element, style) {
-    for (const property in style)
-        element.style[property] = style[property];
+const options={
+    threshold: 0,
+    rootMargin: '0px 0px -100px 0px'
 }
-
-//function which toggles animation in scroll
-const observer = new IntersectionObserver(entries => {
+//function which toggles animation in scroll for bigger div
+const observer = new IntersectionObserver((entries, observer) => {
     // Loop over the entries
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
             return;
         }
       // If the element is visible
-      if (entry.isIntersecting) {
+        if (entry.isIntersecting) {
         // Add the animation class
-        entry.target.classList.add('animate__backInRight');
-      }
+            entry.target.classList.add('animate__slideInUp');
+            // entry.target.classList.add('animate__fadeIn');
+            observer.unobserve(entry.target)
+        }
 
     });
-});
+}, options);
+
 const addElementBg = document.querySelectorAll(".project")
 addElementBg.forEach(element => {
     observer.observe(element);
 })
 
+// function which t?oggles animation in scroll for smaller div
 const observerSm = new IntersectionObserver(entries => {
     // Loop over the entries
     entries.forEach(entry => {
@@ -75,3 +46,16 @@ addElementSm.forEach(element => {
     observerSm.observe(element);
 })
 
+// function which makes navbae stick to the top after scrolling
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
