@@ -1,6 +1,6 @@
 const options={
     threshold: 0,
-    rootMargin: '0px 0px -100px 0px'
+    rootMargin: '0px 0px 0px 0px'
 }
 //function which toggles animation in scroll for bigger div
 const observer = new IntersectionObserver((entries, observer) => {
@@ -47,12 +47,12 @@ addElementSm.forEach(element => {
 })
 
 // function which makes navbae stick to the top after scrolling
-window.onscroll = function() {myFunction()};
+window.onscroll = function() {stickyNavbar()};
 
 var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
 
-function myFunction() {
+function stickyNavbar() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky");
   } else {

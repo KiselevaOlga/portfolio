@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Georama:wght@300&display=swap");
+html {
+  font-family: "Georama", sans-serif;
+}
+
 * {
   box-sizing: border-box;
   font-size: 16px;
@@ -37,7 +42,7 @@ a {
 
 /* -----NAVBAR CONTAINER----- */
 .top-header {
-  background: black;
+  background: #670073;
   height: 50px;
 }
 
@@ -78,55 +83,34 @@ a {
 /* -----NAVBAR CONTAINER----- */
 /* -----ABOUT CONTAINER----- */
 #About {
-  display: block;
-  text-align: center;
-  margin: 0 auto;
-}
-#About #myVideo {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
-
-article {
-  display: block;
   text-align: center;
   margin: 0 auto;
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  color: black;
-  background: white;
-  box-shadow: 0px 0px 15px 3px #808080;
-  position: relative;
-  z-index: 1;
+  background: #f2a7f996;
 }
-article h2 {
-  font-size: 50px;
-  color: black;
-  position: relative;
-  z-index: 1;
+#About article {
+  margin: 7% 3% 7% 3%;
+  display: flex;
+  flex-direction: row;
 }
-article h2 span {
-  font-size: 50px;
-  color: #FFBC4D;
-}
-article p {
+#About article h2 {
   font-size: 30px;
-  color: black;
-  padding: 50px;
-  display: block;
-  text-align: center;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
+  margin-top: 5%;
 }
-article button {
-  display: block;
+#About article h2 span {
+  font-size: 30px;
+  color: white;
+}
+#About article h2 span:hover {
+  border-bottom: 3px solid #FFBC4D;
+}
+#About article img {
+  width: 70%;
+}
+#About button {
   text-align: center;
   margin: 0 auto;
   position: relative;
@@ -140,16 +124,16 @@ article button {
   transition: all 0.5s ease-in;
   cursor: pointer;
 }
-article button img {
+#About button img {
   width: 5%;
   transition: all 0.5s ease-in;
 }
-article button:hover {
+#About button:hover {
   transform: scale(1.1);
   background: #BB19D9;
   color: white;
 }
-article button:hover img {
+#About button:hover img {
   transform: rotate(90deg);
 }
 
@@ -160,12 +144,9 @@ article button:hover img {
   z-index: -1;
   padding-bottom: 200px;
   margin-bottom: -200px;
-  padding-top: 200px;
-  margin-top: -200px;
 }
 
 .skills-container {
-  display: block;
   text-align: center;
   margin: 0 auto;
   width: 70%;
@@ -204,14 +185,12 @@ h2 {
 }
 
 #Projects {
-  display: block;
   text-align: center;
   margin: 0 auto;
 }
 #Projects h2 {
   border-bottom: 2px solid #670073;
   border-top: 2px solid #670073;
-  display: block;
   text-align: center;
   margin: 0 auto;
   text-transform: uppercase;
@@ -286,7 +265,6 @@ h2 {
 }
 
 #Smaller_projects {
-  display: block;
   text-align: center;
   margin: 0 auto;
   width: 80%;
@@ -351,7 +329,6 @@ h2 {
 /* -----PROJECTS CONTAINER----- */
 /* -----FOOTER CONTAINER----- */
 #circle-name {
-  display: block;
   text-align: center;
   margin: 0 auto;
   background: #0092FF;
