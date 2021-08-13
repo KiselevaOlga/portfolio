@@ -196,8 +196,8 @@ h2 {
   margin: 0 auto;
 }
 #Projects h2 {
-  border-bottom: 2px solid #670073;
-  border-top: 2px solid #670073;
+  font-size: 2.5rem;
+  color: white;
   text-align: center;
   margin: 0 auto;
   text-transform: uppercase;

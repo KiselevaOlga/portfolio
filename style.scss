@@ -71,6 +71,7 @@ hr{
     z-index: -1;
 }
 
+
 a{
     text-decoration: none
 }
@@ -229,9 +230,9 @@ h2{
 #Projects {
     @include center;
     h2{
-        border-bottom: 2px solid $violetDk;
-        border-top: 2px solid $violetDk;
-        // width: 30%;
+        font-size: 2.5rem;
+        // border-bottom: 8px solid $violetDk;
+        color: white;
         @include center;
         text-transform: uppercase;
         position: relative;
