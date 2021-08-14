@@ -4,7 +4,7 @@ $green:  #006abb;
 $yellow: #FFBC4D;
 
 $pink: #ff97af;
-$greyLt: #E6E6E6;
+$greyLt: #dbdbdb;
 $greyDk: #808080;
 // $violetLt: #c842f5ef;
 $violetLt: #630085ef;
@@ -100,12 +100,14 @@ a{
     margin-left: 20px;
     text-decoration: none;
     font-size: 17px;
+    transition: all 0.3s ease;
 }
 
 #navbar a:hover {
-    border-bottom: 3px solid $yellow;
-    color: white;
-    // box-shadow: inset 0 0 15px $yellow;
+    transform: all;
+    border-bottom: 5px solid $yellow;
+    color: $yellow;
+
 }
 
 .sticky {
@@ -140,9 +142,24 @@ a{
             span{  
                 font-size: 30px;
                 color: $violet;
+                position: relative;
             }
-            span:hover{
-                border-bottom: 3px solid $yellow;
+
+            span::after{
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 2px;
+                background-color: $yellow;
+                transform: scaleX(0.2);
+                transform-origin: left;
+                transition: transform 250ms ease-in;
+            }
+
+            span:hover::after{
+                transform:  scaleX(1);
             }
         }
         button {
@@ -202,41 +219,68 @@ a{
     padding-top: 3%;
     img {
         @include icon;
-        background: $yellow;
+        background-color: $yellow;
         border-radius: 8px 8px 0px 0px ;
         box-shadow: 0px -3px 15px 3px $greyDk;
+        transition: background-color 0.5s ease-in-out;
     }
-    
+    img:hover{
+        // background-color: #ff4dc4;
+        background-color: white;
+
+    } 
     figcaption {
         font-size: 20px;
-        background: $yellow;
+        background-color: $yellow;
         padding: 5px;
         border-radius: 0px 0px 8px 8px ;
         box-shadow: 0px 3px 15px 3px $greyDk; 
+        transition: background-color 0.5s ease-in-out;
     }
     .icon-container:hover {
         animation: pulse; /* referring directly to the animation's @keyframe declaration */
-        animation-duration: 1s;         
+        animation-duration: 1s;     
+        figcaption{
+            // background-color: #ff4dc4;
+            background-color: white;
+        }
     }
 }
 /* -----SKILLS CONTAINER----- */ 
 
 /* -----PROJECTS CONTAINER----- */
 
-h2{
-    font-size: 30px;
-}
   
 #Projects {
     @include center;
+
     h2{
         font-size: 2.5rem;
-        // border-bottom: 8px solid $violetDk;
-        color: white;
-        @include center;
+        color: black;
         text-transform: uppercase;
         position: relative;
         z-index: 2;
+        transition: color 350ms ease-in;
+    }
+    h2:hover{
+        color: white;
+    }
+    h2::after{
+        content: '';
+        position: absolute;
+        right: 35%;
+        bottom: 0;
+        width: 30%;
+        height: 3px;
+        background-color: black;
+        transform: scaleX(0.2);
+        transform-origin: center;
+        transition: all 350ms ease-in;
+    }
+    h2:hover::after{
+        transform:  scaleX(1);
+        background-color: white;
+
     }
     .overlay{
         display: inline;
@@ -251,6 +295,12 @@ h2{
         opacity: 0;
         transition: .5s ease;
         background-color: $violetLt;
+
+        .in-overlay{
+            color: white;
+            font-size: 2.5rem;
+            margin-top: 5%;
+        }
     }
     div{
         @include box;
@@ -258,7 +308,6 @@ h2{
         background: white;
         box-shadow: inset 0 0 25px 10px #f5bbff;
         margin: 30px;
-        // justify-content: space-between;
         align-items: middle center;
         z-index: 2;
         p{
@@ -279,7 +328,7 @@ h2{
             font-size: 20px;
             position: relative; 
             margin: 20px;
-            top: 37%;
+            // top: 37%;
             text-align: center;
             border-radius: 15px;
             cursor: pointer;
@@ -336,9 +385,8 @@ h2{
             padding: 30px;
         }
         img {
-            width: 250px;
-            height: 150px;
-            padding: 20px;
+            width:80%;
+            padding: 10px;
         }
         button {
             color: white;
