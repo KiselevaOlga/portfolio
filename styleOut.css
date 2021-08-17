@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Georama:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
 html {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Comfortaa", cursive;
   font-weight: 500;
 }
 
@@ -157,6 +156,10 @@ a {
 #About .banner-img {
   margin-top: 30%;
   width: 60%;
+  transition: transform 0.5s ease-in;
+}
+#About .banner-img:hover {
+  transform: scale(1.1);
 }
 
 /* -----ABOUT CONTAINER----- */
@@ -249,9 +252,9 @@ a {
   display: inline;
   position: absolute;
   visibility: hidden;
-  top: -30px;
+  top: -25px;
   bottom: 0;
-  left: -30px;
+  left: -25px;
   right: 0;
   height: 100%;
   width: 100%;
@@ -271,7 +274,7 @@ a {
   text-align: center;
   border-radius: 10px 100px/120px;
   background: white;
-  margin: 30px;
+  margin: 25px;
   align-items: middle center;
   z-index: 2;
 }
@@ -280,10 +283,12 @@ a {
 }
 #Projects div .description {
   text-align: left;
-  padding: 10%;
+  padding: 8%;
+  line-height: 1.6;
 }
 #Projects div .description span {
-  background-color: #ff97af;
+  filter: drop-shadow(15px 8px 4px #d4567394);
+  background-color: #ff97afc9;
   padding: 3%;
   font-size: 30px;
   font-weight: bold;
