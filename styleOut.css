@@ -114,12 +114,13 @@ a {
 #About article h2 span::after {
   content: "";
   position: absolute;
+  z-index: -1;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 2px;
+  height: 30px;
   background-color: #FFBC4D;
-  transform: scaleX(0.2);
+  transform: scaleX(0.35);
   transform-origin: left;
   transition: transform 250ms ease-in;
 }
@@ -184,20 +185,23 @@ a {
   width: 150px;
   padding: 20px;
   background-color: #FFBC4D;
+  filter: brightness(1);
   border-radius: 8px 8px 0px 0px;
   box-shadow: 0px -3px 15px 3px #808080;
-  transition: background-color 0.5s ease-in-out;
+  transition: filter 0.5s ease-in-out;
 }
 .skills-container img:hover {
-  background-color: white;
+  filter: brightness(1.6);
 }
 .skills-container figcaption {
   font-size: 20px;
+  font-weight: bold;
   background-color: #FFBC4D;
+  filter: brightness(1);
   padding: 5px;
   border-radius: 0px 0px 8px 8px;
   box-shadow: 0px 3px 15px 3px #808080;
-  transition: background-color 0.5s ease-in-out;
+  transition: filter 0.5s ease-in-out;
 }
 .skills-container .icon-container:hover {
   animation: pulse;
@@ -205,7 +209,7 @@ a {
   animation-duration: 1s;
 }
 .skills-container .icon-container:hover figcaption {
-  background-color: white;
+  filter: brightness(1.6);
 }
 
 /* -----SKILLS CONTAINER----- */
@@ -265,9 +269,8 @@ a {
   display: inline-flex;
   flex-direction: row;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 10px 100px/120px;
   background: white;
-  box-shadow: inset 0 0 25px 10px #f5bbff;
   margin: 30px;
   align-items: middle center;
   z-index: 2;
@@ -275,9 +278,19 @@ a {
 #Projects div img {
   width: 250px;
 }
+#Projects div .description {
+  text-align: left;
+  padding: 10%;
+}
+#Projects div .description span {
+  background-color: #ff97af;
+  padding: 3%;
+  font-size: 30px;
+  font-weight: bold;
+  color: #670073;
+}
 #Projects div p {
-  margin-top: 15%;
-  padding: 30px;
+  padding: 5%;
 }
 #Projects div img {
   width: 60%;
@@ -296,7 +309,7 @@ a {
   text-align: center;
   border-radius: 15px;
   cursor: pointer;
-  transition: all 0.5s ease-in;
+  transition: all 350ms ease-in;
 }
 #Projects div:hover .overlay {
   visibility: visible;
