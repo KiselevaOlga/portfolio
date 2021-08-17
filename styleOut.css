@@ -283,7 +283,7 @@ a {
 }
 #Projects div .description {
   text-align: left;
-  padding: 8%;
+  padding: 5%;
   line-height: 1.6;
 }
 #Projects div .description span {
@@ -293,9 +293,6 @@ a {
   font-size: 30px;
   font-weight: bold;
   color: #670073;
-}
-#Projects div p {
-  padding: 5%;
 }
 #Projects div img {
   width: 60%;
@@ -412,18 +409,133 @@ a {
 }
 
 #Contacts {
+  justify-content: center;
+  border-top: 10px solid #006abb;
+}
+#Contacts .contacts-container {
+  padding-top: 10px;
   display: flex;
-  flex-direction: inline-flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  height: 10%;
-  border-top: 10px solid #006abb;
-  padding-top: 10px;
 }
-#Contacts img {
+#Contacts .contacts-container .contact-img {
+  cursor: pointer;
+  filter: grayscale(50%);
   width: 50px;
+  transition: all 350ms ease-in;
+}
+#Contacts .contacts-container .contact-img:hover {
+  filter: grayscale(0%);
+  -ms-transform: translateY(-15%);
+  /* IE 9 */
+  transform: translateY(-15%);
+}
+#Contacts h2 {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 30px;
+}
+#Contacts form {
+  text-align: center;
+  margin: 0 auto;
+  width: 50vw;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+#Contacts form label {
+  display: block;
+}
+#Contacts form input {
+  border-radius: 15px;
+}
+#Contacts form textarea {
+  border-radius: 15px;
+}
+#Contacts form button {
+  font-size: 1.3rem;
+  position: relative;
+  z-index: 1;
+  width: 30%;
+  height: 8%;
+  border: 3px solid #670073;
+  background: transparent;
+  color: black;
+  border-radius: 10px;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+}
+#Contacts form button:hover {
+  transform: scale(1.1);
+  background: #BB19D9;
+  color: white;
 }
 
 /* -----FOOTER CONTAINER----- */
+/* -----MEDIA QUERIES----- */
+@media only screen and (max-width: 1321px) {
+  #About article button {
+    width: 45%;
+  }
+
+  .skills-container img {
+    width: 130px;
+    padding: 18px;
+  }
+}
+@media only screen and (max-width: 1160px) {
+  #Projects div .description {
+    padding: 4%;
+    line-height: 1.4;
+  }
+}
+@media only screen and (max-width: 1020px) {
+  #About article button {
+    width: 55%;
+  }
+
+  .skills-container img {
+    width: 120px;
+    padding: 17px;
+  }
+
+  #Projects h2 {
+    font-size: 30px;
+  }
+  #Projects div .description {
+    line-height: 1.2;
+  }
+}
+@media only screen and (max-width: 1004px) {
+  #About article h2 span {
+    white-space: nowrap;
+  }
+  #About article h2 span::after {
+    transform-origin: bottom;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #FFBC4D;
+    transform: scaleY(0.35);
+    transition: transform 250ms ease-in;
+  }
+  #About article h2 span::after span:hover::after {
+    transform: scaleY(1);
+  }
+
+  #Projects div .description span {
+    filter: drop-shadow(15px 8px 4px #d4567394);
+    background-color: #ff97afc9;
+    padding: 3%;
+    font-size: 20px;
+    font-weight: bold;
+    color: #670073;
+  }
+}
+/* -----MEDIA QUERIES----- */
 
 /*# sourceMappingURL=styleOut.css.map */

@@ -20,7 +20,7 @@
                         Hello, I am <span>Olga Kiseleva</span> <br>
                     A Front End Developer with a passion for building apps and problem-solving.  
                     </h2>
-                    <button onclick="window.location.href='#Projects';" 
+                    <button id="about-button" onclick="window.location.href='#Projects';" 
                     class="animate__animated animate__flipInX animate__delay-2s">
                         View my work &nbsp;&nbsp;<img src="./img/icons/right-arrow.png"/>
                     </button>  
@@ -126,6 +126,20 @@
                         <button class="over_btn">See website </button>
                     </div>
                 </div>
+                <div class="project animate__animated" style="border-radius:100px 10px / 120px;">
+                    <img src="img/url-new-united.png"/>
+                    <p class="description" style="text-align: right;">
+                        <span style="filter: drop-shadow(-15px 8px 4px #d4567394)">Shorten URL</span>
+                        <br><br>
+                        Fully responsive web application, which converts 
+                        long URL to custom short URL, using Rebrandly Web API, JavaScript, HTML5, CSS3.
+                    </p>
+                    <div class="overlay" style="border-radius:100px 10px / 120px;">
+                        <p class="in-overlay">Play My Jam!</p>
+                        <button class="over_btn">See code </button>
+                        <button class="over_btn">See website </button>
+                    </div>
+                </div>
             </section>
             <hr class="oppositeHr">
             <section id="Smaller_projects">
@@ -149,20 +163,12 @@
                         <button class="over_btn">See code </button>
                     </div>
                 </div>
-                <div class="small_project animate__animated nyt">
+                <div class="small_project animate__animated nyt" >
                     <img src="img/screenshots/nyt.jpg"/>
-                    <p>Web application where you can find articles of New York Times magazine.
+                    <p>
+                        Web application where you can find articles of New York Times magazine.
                          Website created using JavaScript, HTML5,
                          CSS3, New York Times Article Search API tech stack.
-                    </p>
-                    <div class="overlaySm">
-                        <button class="over_btn">See code </button>
-                    </div>
-                </div>
-                <div class="small_project animate__animated">
-                    <img src="img/screenshots/shorturl.png" />
-                    <p>Web application, which converts long URL to short URL, using Rebrandly Web API,
-                         JavaScript, HTML5, CSS3.
                     </p>
                     <div class="overlaySm">
                         <button class="over_btn">See code </button>
@@ -171,22 +177,40 @@
                 
             </section>
         </main>
-        <div id="circle-name">
-            <p>OK</p>
-        </div>
+        <!-- <div id="circle-name">
+            <p></p>
+        </div> -->
         <footer id="Contacts">
-            <figure class="network">
-                <img src="./img/icons/original/linkedin.png" alt="LinkedIn logo"/>
-            </figure>
-            <figure class="network">
-                <img src="./img/icons/original/gmail.png" alt="Gmail logo"/>
-            </figure>
-            <figure class="network">
-                <img src="./img/icons/original/download.png" alt="Download sign"/>
-            </figure>
-            <figure class="network">
-                <img src="./img/icons/original/github-sign.png" alt="Github logo"/>
-            </figure>
+            <div class="contacts-container">
+                <figure class="network" title="Go to LinkedIn profile">
+                    <img src="./img/icons/original/linkedin.png" alt="LinkedIn logo" class="contact-img"/>
+                </figure>
+                <figure class="network" title="Write an email">
+                    <img src="./img/icons/original/gmail.png" alt="Gmail logo" class="contact-img"/>
+                </figure>
+                <figure class="network" title="Download Olga Kiseleva CV">
+                    <a href="./doc_files/OlgaKiselevaCVSoftwareEngineer.docx" download rel="noopener noreferrer" target="_blank">
+                        <img src="./img/icons/original/download.png" alt="Download sign" class="contact-img"/>
+                    </a>
+                </figure>
+                <figure class="network" title="Go to GitHub profile">
+                    <img src="./img/icons/original/github-sign.png" alt="Github logo" class="contact-img"/>
+                </figure>
+            </div>
+            <h2>Let's connect!</h2>
+            <form action="mailto:olga.kiseleva.pro@gmail.com"
+                method="POST"
+                enctype="multipart/form-data"
+                name="EmailForm">
+                <label for="#name" >Your name</label>
+                <input type="text" name="Contact-Name" id="name"><br><br>
+                
+                <label for="message">Your message</label>
+                <textarea name="Contact-Message" rows="6" id="message">
+                </textarea><br><br> 
+                <button type="submit" value="Submit">Send</button>
+            </form>  
+        </form>
         </footer>
     </body>
     <script src="main.js"></script>

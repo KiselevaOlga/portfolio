@@ -1,16 +1,23 @@
+// COLORS
+
 $violet: #BB19D9;
-// $green:  #0091ff;
 $green:  #006abb;
 $yellow: #FFBC4D;
-
 $pink: #ff97afc9;
 $greyLt: #dbdbdb;
 $greyDk: #808080;
-// $violetLt: #c842f5ef;
 $violetLt: #630085ef;
-
 $violetDk: #670073;
 
+// COLORS
+
+// FONTS 
+
+$large: 30px;
+$medium: 20px;
+$standart: 16px;
+
+// FONTS
 // @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 html{
@@ -137,10 +144,10 @@ a{
         width: 70%;
         margin-left: 5%;
         h2{
-            font-size: 30px;
+            font-size: $large;
             margin-top: 30%;
             span{  
-                font-size: 30px;
+                font-size: $large;
                 color: $violet;
                 position: relative;
             }
@@ -235,7 +242,7 @@ a{
 
     } 
     figcaption {
-        font-size: 20px;
+        font-size: $medium;
         font-weight: bold;
         background-color: $yellow;
         filter: brightness(1);
@@ -285,7 +292,6 @@ a{
     h2:hover::after{
         transform:  scaleX(1);
         background-color: white;
-
     }
     .overlay{
         display: inline;
@@ -317,20 +323,20 @@ a{
         
         .description{
             text-align: left;
-            padding: 8%;
+            padding: 5%;
             line-height: 1.6;
             span{
                 filter: drop-shadow(15px 8px 4px #d4567394);
                 background-color: $pink;
                 padding: 3%;
-                font-size: 30px;
+                font-size: $large;
                 font-weight: bold;
                 color: $violetDk;
             }
         }
-        p {
-            padding: 5%;
-        }
+        // p {
+        //     padding: 5%;
+        // }
         img {
             width: 60%;
             padding: 30px;
@@ -342,7 +348,7 @@ a{
             border: 3px solid white;
             height: 15%;
             width: 20%;
-            font-size: 20px;
+            font-size: $medium;
             position: relative; 
             margin: 20px;
             text-align: center;
@@ -410,7 +416,7 @@ a{
             background: $violetDk;
             height: 15%;
             width: auto;
-            font-size: 20px;
+            font-size: $medium;
             position: relative; 
             margin: 20px;
             top: 37%;
@@ -458,16 +464,170 @@ a{
 }
 
 #Contacts {
-    display: flex;
-    flex-direction: inline-flex;
-    flex-wrap: wrap;
     justify-content: center;
-    height: 10%;    
     border-top: 10px solid $green;
-    padding-top: 10px;
-    img {
-        width: 50px;
+    .contacts-container{ 
+        padding-top: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        .contact-img {
+            cursor: pointer;
+            filter: grayscale(50%);
+            width: 50px;
+            transition: all 350ms ease-in;
+        }
+        .contact-img:hover{
+            filter: grayscale(0%); 
+            -ms-transform: translateY(-15%); /* IE 9 */
+            transform: translateY(-15%);
+        }
     }
+
+    h2 {
+        @include center;
+        font-size: $large;
+    }
+
+    
+    form{
+        @include center;
+        width: 50vw;
+        margin-top: 2%;
+        margin-bottom: 5%;
+        label{
+            display: block;
+        }
+        input{
+            border-radius: 15px;
+        }
+        textarea{
+            border-radius: 15px;
+        }
+        button {
+            font-size: 1.3rem;
+            position:relative;
+            z-index: 1;
+            width: 30%;
+            height: 8%;
+            border: 3px solid $violetDk;
+            background: transparent;
+            color: black;
+            border-radius: 10px;
+            transition: all 0.5s ease-in;
+            cursor: pointer;
+        }
+
+        button:hover{
+            transform: scale(1.1);
+            background: $violet;
+            color: white;
+        }
+    }
+    
     
 }
 /* -----FOOTER CONTAINER----- */ 
+
+/* -----MEDIA QUERIES----- */ 
+
+@media only screen and (max-width: 1321px){
+    #About{
+        article{
+            button {
+                width: 45%;
+            }
+        }
+    }
+    .skills-container {
+        img {   
+            width: 130px;
+            padding: 18px;    
+        } 
+    }
+}
+
+@media only screen and (max-width: 1160px){
+    #Projects{
+        div{
+            .description{
+                padding: 4%;
+                line-height: 1.4;
+            }
+        }
+    }
+
+}
+@media only screen and (max-width: 1020px){
+    #About{
+        article{
+            button {
+                width: 55%;
+            }
+        }
+    }
+    .skills-container {
+        img {   
+            width: 120px;
+            padding: 17px;    
+        } 
+    }
+
+    #Projects{
+        h2{
+            font-size:$large;
+        }
+        div{
+            .description{
+                line-height: 1.2;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1004px){
+    #About{
+        article{
+            h2{
+                span{
+                    white-space: nowrap;
+                }
+                span::after{
+                    transform-origin: bottom;
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 30px;
+                    background-color: $yellow;
+                    transform: scaleY(0.35);
+                    transition: transform 250ms ease-in;
+        
+                    span:hover::after{
+                        transform:  scaleY(1);
+                    }
+                }
+            }
+        
+        }
+    }
+
+    #Projects{
+        div{
+            .description{
+                span{
+                    filter: drop-shadow(15px 8px 4px #d4567394);
+                    background-color: $pink;
+                    padding: 3%;
+                    font-size: $medium;
+                    font-weight: bold;
+                    color: $violetDk;
+                }
+            }
+        }
+    }
+}
+/* -----MEDIA QUERIES----- */ 
