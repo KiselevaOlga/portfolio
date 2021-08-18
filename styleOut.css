@@ -66,7 +66,7 @@ a {
   margin-right: 20px;
   margin-left: 20px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 16px;
   transition: all 0.3s ease;
 }
 
@@ -117,7 +117,7 @@ a {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 30px;
+  height: 32px;
   background-color: #FFBC4D;
   transform: scaleX(0.35);
   transform-origin: left;
@@ -190,7 +190,7 @@ a {
   background-color: #FFBC4D;
   filter: brightness(1);
   border-radius: 8px 8px 0px 0px;
-  box-shadow: 0px -3px 15px 3px #808080;
+  box-shadow: 0px -2px 15px 1px #808080;
   transition: filter 0.5s ease-in-out;
 }
 .skills-container img:hover {
@@ -203,7 +203,7 @@ a {
   filter: brightness(1);
   padding: 5px;
   border-radius: 0px 0px 8px 8px;
-  box-shadow: 0px 3px 15px 3px #808080;
+  box-shadow: 0px 2px 15px 1px #808080;
   transition: filter 0.5s ease-in-out;
 }
 .skills-container .icon-container:hover {
@@ -311,12 +311,12 @@ a {
   text-align: center;
   border-radius: 15px;
   cursor: pointer;
-  transition: all 350ms ease-in;
+  transition: all 250ms ease-in;
 }
 #Projects div:hover .overlay {
   visibility: visible;
   opacity: 1;
-  box-shadow: 0px 0px 35px 10px #BB19D9;
+  box-shadow: 0px 0px 2px #BB19D9;
 }
 #Projects div:hover .overlay button:hover {
   transform: scaleX(1.03);
@@ -324,14 +324,25 @@ a {
   color: black;
   border-color: transparent;
 }
+#Projects .opposite-project {
+  border-radius: 100px 10px/120px !important;
+}
+#Projects .opposite-description {
+  text-align: right !important;
+}
+#Projects .opposite-span {
+  filter: drop-shadow(-15px 8px 4px #d4567394) !important;
+}
+#Projects .opposite-overlay {
+  border-radius: 100px 10px/120px !important;
+}
 
 #Smaller_projects {
   text-align: center;
   margin: 0 auto;
   width: 80%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto auto;
   justify-content: center;
   align-items: stretch;
 }
@@ -350,10 +361,9 @@ a {
   background-color: #FFBC4D;
 }
 #Smaller_projects div {
-  width: 25%;
   border-radius: 8px;
   background: white;
-  margin: 30px;
+  margin: 15px;
   justify-content: space-between;
   z-index: 2;
 }
@@ -369,7 +379,7 @@ a {
   padding: 10px;
   background: #670073;
   height: 15%;
-  width: auto;
+  width: 50%;
   font-size: 20px;
   position: relative;
   margin: 20px;
@@ -482,11 +492,27 @@ a {
     width: 130px;
     padding: 18px;
   }
+
+  #Projects div img {
+    margin: auto 0;
+    width: 50%;
+    height: 30%;
+  }
 }
 @media only screen and (max-width: 1160px) {
+  #Projects h2 {
+    font-size: 30px;
+  }
   #Projects div .description {
     padding: 4%;
     line-height: 1.4;
+  }
+  #Projects div .description span {
+    font-size: 20px;
+  }
+  #Projects div img {
+    width: 50%;
+    height: 35%;
   }
 }
 @media only screen and (max-width: 1020px) {
@@ -498,15 +524,26 @@ a {
     width: 120px;
     padding: 17px;
   }
-
-  #Projects h2 {
-    font-size: 30px;
+  .skills-container figcaption {
+    font-size: 16px;
   }
+
   #Projects div .description {
     line-height: 1.2;
   }
 }
 @media only screen and (max-width: 1004px) {
+  #About .banner-img {
+    margin-top: 40%;
+    width: 50%;
+  }
+  #About article button {
+    width: 70%;
+  }
+  #About article h2 {
+    margin-top: 50%;
+    font-size: 20px;
+  }
   #About article h2 span {
     white-space: nowrap;
   }
@@ -527,6 +564,9 @@ a {
     transform: scaleY(1);
   }
 
+  #Projects div .description {
+    font-size: 14px;
+  }
   #Projects div .description span {
     filter: drop-shadow(15px 8px 4px #d4567394);
     background-color: #ff97afc9;
@@ -534,6 +574,50 @@ a {
     font-size: 20px;
     font-weight: bold;
     color: #670073;
+  }
+  #Projects div img {
+    width: 60%;
+    height: 45%;
+  }
+}
+@media only screen and (max-width: 881px) {
+  #navbar a {
+    font-size: 14px;
+  }
+
+  #About .banner-img {
+    margin-top: 40%;
+    width: 55%;
+  }
+  #About article button {
+    width: 90%;
+  }
+  #About article h2 {
+    margin-top: 50%;
+    font-size: 20px;
+  }
+
+  #Projects div {
+    flex-direction: column;
+  }
+  #Projects div .description {
+    text-align: center;
+    margin-top: 5%;
+  }
+  #Projects div .description span {
+    padding: 1% 8%;
+  }
+  #Projects div img {
+    width: 100%;
+  }
+  #Projects .opposite-project {
+    flex-direction: column-reverse !important;
+  }
+  #Projects .opposite-description {
+    text-align: center !important;
+  }
+  #Projects .opposite-span {
+    filter: drop-shadow(-15px 8px 4px #d4567394) !important;
   }
 }
 /* -----MEDIA QUERIES----- */

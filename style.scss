@@ -16,6 +16,8 @@ $violetDk: #670073;
 $large: 30px;
 $medium: 20px;
 $standart: 16px;
+$small: 14px;
+$xsmall: 12px;
 
 // FONTS
 // @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap');
@@ -106,7 +108,7 @@ a{
     margin-right: 20px;
     margin-left: 20px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: $standart;
     transition: all 0.3s ease;
 }
 
@@ -159,7 +161,7 @@ a{
                 left: 0;
                 bottom: 0;
                 width: 100%;
-                height: 30px;
+                height: 32px;
                 background-color: $yellow;
                 transform: scaleX(0.35);
                 transform-origin: left;
@@ -234,7 +236,7 @@ a{
         background-color: $yellow;
         filter: brightness(1);
         border-radius: 8px 8px 0px 0px ;
-        box-shadow: 0px -3px 15px 3px $greyDk;
+        box-shadow: 0px -2px 15px 1px $greyDk;
         transition: filter 0.5s ease-in-out;
     }
     img:hover{
@@ -248,7 +250,7 @@ a{
         filter: brightness(1);
         padding: 5px;
         border-radius: 0px 0px 8px 8px ;
-        box-shadow: 0px 3px 15px 3px $greyDk; 
+        box-shadow: 0px 2px 15px 1px $greyDk; 
         transition: filter 0.5s ease-in-out;
     }
     .icon-container:hover {
@@ -334,9 +336,6 @@ a{
                 color: $violetDk;
             }
         }
-        // p {
-        //     padding: 5%;
-        // }
         img {
             width: 60%;
             padding: 30px;
@@ -354,14 +353,14 @@ a{
             text-align: center;
             border-radius: 15px;
             cursor: pointer;
-            transition: all 350ms ease-in;
+            transition: all 250ms ease-in;
         }
     }
     div:hover{
         .overlay{
             visibility: visible;
             opacity: 1;
-            box-shadow: 0px 0px 35px 10px $violet;
+            box-shadow: 0px 0px 2px $violet;
             button:hover{
                 transform: scaleX(1.03);
                 background: $yellow;
@@ -371,15 +370,31 @@ a{
         }
 
     }
-   
+   // OPPOSITE DIVS
+
+    .opposite-project{
+        border-radius:100px 10px / 120px !important;
+    }
+
+    .opposite-description{
+        text-align: right !important;
+    }
+    .opposite-span{
+        filter: drop-shadow(-15px 8px 4px #d4567394) !important;
+    }
+    .opposite-overlay{
+        border-radius:100px 10px / 120px !important;
+    }
+
+    // OPPOSITE DIVS
 }
+
 
 #Smaller_projects{
     @include center;
     width: 80%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto auto;
     justify-content: center;
     align-items: stretch;
     .overlaySm{
@@ -397,10 +412,9 @@ a{
         background-color: $yellow;
     }
     div{
-        width: 25%;
         border-radius: 8px;
         background: white;
-        margin: 30px;
+        margin: 15px;
         justify-content: space-between;
         z-index: 2;
         p{
@@ -415,7 +429,7 @@ a{
             padding: 10px;
             background: $violetDk;
             height: 15%;
-            width: auto;
+            width: 50%;
             font-size: $medium;
             position: relative; 
             margin: 20px;
@@ -546,14 +560,33 @@ a{
             padding: 18px;    
         } 
     }
+    #Projects{
+        div{
+            img{
+                margin: auto 0;
+               width: 50%;
+               height: 30%;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 1160px){
     #Projects{
+        h2{
+            font-size:$large;
+        }
         div{
             .description{
                 padding: 4%;
                 line-height: 1.4;
+                span{
+                    font-size: $medium;
+                }
+            }
+            img{
+               width: 50%;
+               height: 35%;
             }
         }
     }
@@ -572,12 +605,12 @@ a{
             width: 120px;
             padding: 17px;    
         } 
+        figcaption{
+            font-size: $standart;
+        }
     }
 
     #Projects{
-        h2{
-            font-size:$large;
-        }
         div{
             .description{
                 line-height: 1.2;
@@ -588,8 +621,17 @@ a{
 
 @media only screen and (max-width: 1004px){
     #About{
+        .banner-img{
+            margin-top: 40%;
+            width: 50%;
+        }
         article{
+            button {
+                width: 70%;
+            }
             h2{
+                margin-top: 50%;
+                font-size: $medium;
                 span{
                     white-space: nowrap;
                 }
@@ -614,10 +656,11 @@ a{
         
         }
     }
-
+   
     #Projects{
         div{
             .description{
+                font-size: 14px;
                 span{
                     filter: drop-shadow(15px 8px 4px #d4567394);
                     background-color: $pink;
@@ -627,7 +670,58 @@ a{
                     color: $violetDk;
                 }
             }
+            img{
+                width: 60%;
+                height: 45%;
+             }
         }
     }
 }
+
+@media only screen and (max-width: 881px){
+    #navbar a {
+        font-size: $small;
+    }
+    #About{
+        .banner-img{
+            margin-top: 40%;
+            width: 55%;
+        }
+        article{
+            button {
+                width: 90%;
+            }
+            h2{
+                margin-top: 50%;
+                font-size: $medium;
+            }
+        }
+    }
+    #Projects{
+        div{
+            flex-direction: column;
+            .description{
+                text-align: center;
+                margin-top: 5%;
+                span{ 
+                    padding: 1% 8%;
+                }
+            }
+            img{
+                width: 100%;
+             }
+        }
+        .opposite-project{
+            flex-direction: column-reverse !important;
+        }
+        .opposite-description{
+            text-align: center !important;
+        }
+        .opposite-span{
+            filter: drop-shadow(-15px 8px 4px #d4567394) !important;
+        }
+    }
+
+}
+@media only screen and (max-width: 571px){}
 /* -----MEDIA QUERIES----- */ 
