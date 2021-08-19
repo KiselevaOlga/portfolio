@@ -1,3 +1,4 @@
+
 const options={
     threshold: 0,
     rootMargin: '0px 0px 0px 0px'
@@ -25,6 +26,8 @@ addElementBg.forEach(element => {
     observer.observe(element);
 })
 
+
+
 // function which t?oggles animation in scroll for smaller div
 const observerSm = new IntersectionObserver(entries => {
     // Loop over the entries
@@ -46,6 +49,8 @@ addElementSm.forEach(element => {
     observerSm.observe(element);
 })
 
+
+
 // function which makes navbae stick to the top after scrolling
 window.onscroll = function() {stickyNavbar()};
 
@@ -59,3 +64,40 @@ function stickyNavbar() {
     navbar.classList.remove("sticky");
   }
 }
+
+
+// function which toggles menu to open and close in mobile width mode
+
+let isHidden = true;
+const toggleIcon = document.querySelector('.toggle-btn');
+const menuElement = document.querySelector('.top-header-mobile');
+function toggleMenu() {
+  if (isHidden) {
+    menuElement.style.display = 'grid';
+    menuElement.classList.add('animated', 'fadeInLeft', 'open');
+    isHidden = false;
+    
+  } else {
+    menuElement.style.display = 'none';
+    menuElement.classList.add('animated', 'fadeOutLeft');
+    isHidden = true;
+  }
+  function handleAnimationEnd() {
+    menuElement.classList.remove('animated', 'fadeInLeft', 'fadeOutLeft')
+    if (isHidden) {
+      menuElement.classList.remove('open');
+    }
+    menuElement.removeEventListener('animationend', handleAnimationEnd)
+  }
+  menuElement.addEventListener('animationend', handleAnimationEnd)
+} 
+
+toggleIcon.addEventListener('click', function(){toggleMenu()})
+
+
+
+function clickToClose(){
+  menuElement.style.display = 'none';
+}
+
+document.getElementById("main-main").addEventListener("mouseout", ()=>{clickToClose()})
