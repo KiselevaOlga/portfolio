@@ -68,36 +68,24 @@ function stickyNavbar() {
 
 // function which toggles menu to open and close in mobile width mode
 
-let isHidden = true;
-const toggleIcon = document.querySelector('.toggle-btn');
-const menuElement = document.querySelector('.top-header-mobile');
-function toggleMenu() {
-  if (isHidden) {
-    menuElement.style.display = 'grid';
-    menuElement.classList.add('animated', 'fadeInLeft', 'open');
-    isHidden = false;
+// let isHidden = true;
+// const toggleIcon = document.querySelector('.toggle-btn');
+// const menuElement = document.querySelector('#navbar');
+// const links = document.querySelectorAll('.link-wide')
+
+// function toggleMenu() {
+//   if (isHidden) {
+//     menuElement.classList.add("mobile");
+//     links.forEach(link => link.style.display = "block");
+//     isHidden = false;
     
-  } else {
-    menuElement.style.display = 'none';
-    menuElement.classList.add('animated', 'fadeOutLeft');
-    isHidden = true;
-  }
-  function handleAnimationEnd() {
-    menuElement.classList.remove('animated', 'fadeInLeft', 'fadeOutLeft')
-    if (isHidden) {
-      menuElement.classList.remove('open');
-    }
-    menuElement.removeEventListener('animationend', handleAnimationEnd)
-  }
-  menuElement.addEventListener('animationend', handleAnimationEnd)
-} 
+//   } else {
+//     menuElement.classList.remove("mobile");
+//     links.forEach(link => link.style.display = "none");
+//     isHidden = true;
+//   }
 
-toggleIcon.addEventListener('click', function(){toggleMenu()})
+// } 
 
+// toggleIcon.addEventListener('click', function(){toggleMenu()})
 
-
-function clickToClose(){
-  menuElement.style.display = 'none';
-}
-
-document.getElementById("main-main").addEventListener("mouseout", ()=>{clickToClose()})
