@@ -21,7 +21,6 @@ hr {
   background: #006abb;
   border-color: #006abb;
   -ms-transform: skewY(20deg);
-  /* IE 9 */
   transform: skewY(20deg);
   position: relative;
   z-index: 0;
@@ -32,7 +31,6 @@ hr {
   background: #006abb;
   border-color: #006abb;
   -ms-transform: skewY(-20deg);
-  /* IE 9 */
   transform: skewY(-20deg);
   position: relative;
   z-index: -1;
@@ -88,21 +86,6 @@ a {
   top: 0;
   width: 100%;
   z-index: 3;
-}
-
-.mobile {
-  display: flex !important;
-  flex-direction: column !important;
-  height: 250px !important;
-}
-.mobile .link-wide {
-  z-index: 3 !important;
-  height: 35px !important;
-  color: #f2f2f2 !important;
-  text-align: left !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
-  font-size: 16px !important;
 }
 
 /* -----NAVBAR CONTAINER----- */
@@ -232,7 +215,6 @@ a {
 }
 .skills-container .icon-container:hover {
   animation: pulse;
-  /* referring directly to the animation's @keyframe declaration */
   animation-duration: 1s;
 }
 .skills-container .icon-container:hover figcaption {
@@ -451,7 +433,6 @@ a {
 #Contacts .contacts-container .contact-img:hover {
   filter: grayscale(0%);
   -ms-transform: translateY(-15%);
-  /* IE 9 */
   transform: translateY(-15%);
 }
 
@@ -792,12 +773,16 @@ a {
   }
 }
 @media only screen and (max-width: 367px) {
-  #navbar {
-    justify-content: center;
-  }
   #navbar .link-wide {
+    text-align: center;
     padding-left: 5px;
     padding-right: 5px;
+  }
+  #navbar .link-wide:nth-child(2) {
+    color: #FFBC4D;
+  }
+  #navbar .link-wide:nth-child(4) {
+    color: #FFBC4D;
   }
 
   #About article {
