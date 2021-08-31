@@ -98,6 +98,8 @@ a {
   display: flex;
   flex-direction: row;
   background: transparent;
+  align-items: center;
+  justify-content: center;
 }
 #About article {
   display: flex;
@@ -107,7 +109,6 @@ a {
 }
 #About article h2 {
   font-size: 30px;
-  margin-top: 30%;
 }
 #About article h2 span {
   font-size: 30px;
@@ -136,8 +137,8 @@ a {
   font-size: 1.3rem;
   position: relative;
   z-index: 1;
-  width: 30%;
-  height: 8%;
+  width: 35%;
+  height: 7vh;
   border: 3px solid #670073;
   background: transparent;
   color: black;
@@ -146,7 +147,7 @@ a {
   cursor: pointer;
 }
 #About article button img {
-  width: 8%;
+  width: 20px;
   transition: all 0.5s ease-in;
 }
 #About article button:hover {
@@ -157,8 +158,10 @@ a {
 #About article button:hover img {
   transform: rotate(90deg);
 }
+#About article .banner-small-text img {
+  width: 20px;
+}
 #About .banner-img {
-  margin-top: 30%;
   width: 60%;
   transition: transform 0.5s ease-in;
 }
@@ -438,9 +441,9 @@ a {
 
 /* -----FOOTER CONTAINER----- */
 /* -----MEDIA QUERIES----- */
-@media only screen and (max-width: 1321px) {
+@media only screen and (max-width: 1322px) {
   #About article button {
-    width: 45%;
+    width: 50%;
   }
 
   .skills-container img {
@@ -496,14 +499,12 @@ a {
 }
 @media only screen and (max-width: 1004px) {
   #About .banner-img {
-    margin-top: 40%;
     width: 50%;
   }
   #About article button {
     width: 70%;
   }
   #About article h2 {
-    margin-top: 50%;
     font-size: 20px;
   }
   #About article h2 span {
@@ -522,7 +523,7 @@ a {
     transform: scaleY(0.35);
     transition: transform 250ms ease-in;
   }
-  #About article h2 span::after span:hover::after {
+  #About article h2 span::after:hover::after {
     transform: scaleY(1);
   }
 
@@ -539,16 +540,14 @@ a {
     font-size: 14px;
   }
 
-  #About .banner-img {
-    margin-top: 40%;
-    width: 55%;
-  }
   #About article button {
     width: 90%;
   }
   #About article h2 {
-    margin-top: 50%;
     font-size: 20px;
+  }
+  #About .banner-img {
+    width: 55%;
   }
 
   #Projects .overlay {
@@ -595,26 +594,16 @@ a {
   }
 }
 @media only screen and (max-width: 747px) {
-  #About .banner-img {
-    margin-top: 55%;
-    width: 60%;
-  }
   #About article button {
     width: 90%;
   }
-  #About article h2 {
-    margin-top: 65%;
+  #About .banner-img {
+    width: 60%;
   }
 }
 @media only screen and (max-width: 695px) {
-  #About .banner-img {
-    margin-top: 65%;
-  }
   #About article button {
     width: 90%;
-  }
-  #About article h2 {
-    margin-top: 75%;
   }
 }
 @media only screen and (max-width: 624px) {
@@ -625,17 +614,12 @@ a {
     width: 95vw;
   }
   #About article h2 {
-    margin-top: 30%;
     padding: 0 20%;
     line-height: 1.3;
   }
   #About article button {
     margin-top: 5%;
     width: 43%;
-    height: 10vh;
-  }
-  #About article button img {
-    width: 6%;
   }
   #About .banner-img {
     display: none;
@@ -677,9 +661,6 @@ a {
 @media only screen and (max-width: 571px) {
   #About article button {
     width: 50%;
-  }
-  #About article button img {
-    width: 7%;
   }
 
   #navbar {
@@ -785,14 +766,8 @@ a {
     color: #FFBC4D;
   }
 
-  #About article {
-    margin-top: 25%;
-  }
   #About article button {
     width: 60%;
-  }
-  #About article button img {
-    width: 8%;
   }
 }
 /* -----MEDIA QUERIES----- */

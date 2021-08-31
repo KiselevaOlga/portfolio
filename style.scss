@@ -146,7 +146,8 @@ a{
     display: flex;
     flex-direction: row;
     background: transparent;
-
+    align-items: center;
+    justify-content: center;
     article{
         display: flex;
         flex-direction: column;  
@@ -154,7 +155,6 @@ a{
         margin-left: 5%;
         h2{
             font-size: $large;
-            margin-top: 30%;
             span{  
                 font-size: $large;
                 color: $violet;
@@ -184,8 +184,8 @@ a{
             font-size: 1.3rem;
             position:relative;
             z-index: 1;
-            width: 30%;
-            height: 8%;
+            width: 35%;
+            height: 7vh;
             border: 3px solid $violetDk;
             background: transparent;
             color: black;
@@ -193,28 +193,31 @@ a{
             transition: all 0.5s ease-in;
             cursor: pointer;
             img{
-                width: 8%;
+                width: 20px;
                 transition: all 0.5s ease-in;
             }
-        }
-
-        button:hover{
-            transform: scale(1.1);
-            background: $violet;
-            color: white;
-            img{
-                transform: rotate(90deg);
+            &:hover{
+                transform: scale(1.1);
+                background: $violet;
+                color: white;
+                img{
+                    transform: rotate(90deg);
+                }
             }
-        }
+        }   
+        .banner-small-text{
+            img{
+                width: 20px;
+            }
+        }     
     }
 
     .banner-img{
-        margin-top: 30%;
         width: 60%;
         transition: transform 0.5s ease-in;
-    }
-    .banner-img:hover {
-        transform: scale(1.1);
+        &:hover {
+            transform: scale(1.1);
+        }
     }
     
 }
@@ -500,11 +503,11 @@ a{
 
 /* -----MEDIA QUERIES----- */ 
 
-@media only screen and (max-width: 1321px){
+@media only screen and (max-width: 1322px){
     #About{
         article{
             button {
-                width: 45%;
+                width: 50%;
             }
         }
     }
@@ -584,7 +587,6 @@ a{
 @media only screen and (max-width: 1004px){
     #About{
         .banner-img{
-            margin-top: 40%;
             width: 50%;
         }
         article{
@@ -592,7 +594,6 @@ a{
                 width: 70%;
             }
             h2{
-                margin-top: 50%;
                 font-size: $medium;
                 span{
                     white-space: nowrap;
@@ -610,7 +611,7 @@ a{
                     transform: scaleY(0.35);
                     transition: transform 250ms ease-in;
         
-                    span:hover::after{
+                    &:hover::after{
                         transform:  scaleY(1);
                     }
                 }
@@ -637,19 +638,18 @@ a{
         font-size: $small;
     }
     #About{
-        .banner-img{
-            margin-top: 40%;
-            width: 55%;
-        }
         article{
             button {
                 width: 90%;
             }
             h2{
-                margin-top: 50%;
                 font-size: $medium;
             }
         }
+        .banner-img{
+            width: 55%;
+        }
+
     }
     #Projects{
         .overlay{
@@ -705,31 +705,21 @@ a{
 
 @media only screen and (max-width: 747px){
     #About{
-        .banner-img{
-            margin-top: 55%;
-            width: 60%;
-        }
         article{
             button {
                 width: 90%;
             }
-            h2{
-                margin-top: 65%;
-            }
+        }
+        .banner-img{
+            width: 60%;
         }
     }
 }
 @media only screen and (max-width: 695px){
     #About{
-        .banner-img{
-            margin-top: 65%;
-        }
         article{
             button {
                 width: 90%;
-            }
-            h2{
-                margin-top: 75%;
             }
         }
     }
@@ -741,17 +731,12 @@ a{
         article{
             width: 95vw;
             h2{
-                margin-top: 30%;
                 padding: 0 20%;
                 line-height: 1.3;
             }
             button {
                 margin-top: 5%;
                 width: 43%;
-                height: 10vh;
-                img{
-                    width: 6%;
-                }
             }
         }
     
@@ -807,9 +792,6 @@ a{
         article{
             button {
                 width: 50%;
-                img{
-                    width: 7%;
-                }
             }
         }   
     }
@@ -930,12 +912,8 @@ a{
     }
     #About{
         article{
-            margin-top: 25%;
             button {
                 width: 60%;
-                img{
-                    width: 8%;
-                }
             }
         }   
     }
