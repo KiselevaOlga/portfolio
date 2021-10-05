@@ -432,7 +432,7 @@ a {
   cursor: pointer;
   filter: grayscale(50%);
   width: 50px;
-  transition: all 350ms ease-in;
+  transition: all 150ms ease-in;
 }
 #Contacts .contacts-container .contact-img:hover {
   filter: grayscale(0%);
